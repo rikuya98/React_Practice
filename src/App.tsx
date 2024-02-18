@@ -1,9 +1,31 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { BrowserRouter ,Link, Routes, Route } from 'react-router-dom';
 import { Home } from './components/Home';
 import { useState } from 'react';
 import {ArticleCreation} from './components/ArticleCreation';
-import { useLocation } from 'react-router-dom';
+import { css } from '@emotion/react';
+
+
+const navStyle = css`
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const linkStyle = css`
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #04D9FF;
+  }
+`;
+
 
 // ダミーデータ
 export interface Post {
@@ -22,9 +44,9 @@ function App() {
   return (
     <>
     <div className="App">
-      <nav>
-        <Link to="/">TOPページ</Link>
-        <Link to="/article">記事作成</Link>
+      <nav css={navStyle}>
+        <Link to="/" css={linkStyle}>TOPページ</Link>
+        <Link to="/article" css={linkStyle}>記事作成</Link>
       </nav>
 
     </div>
