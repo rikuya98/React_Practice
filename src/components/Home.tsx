@@ -1,16 +1,13 @@
-// ダミーデータ
-interface Post {
-    id: number;
-    title: string;
-    content: string;
-  }
-const posts: Post[] = [
-    { id: 1, title: 'はじめまして！', content: '今日から日記を始めます！' },
-    { id: 2, title: 'おすすめのカフェ', content: 'Hoge市のカフェはおすすめです！' },
-    { id: 3, title: '勉強始めます', content: 'Reactの勉強始めます！' },
-  ];
+import { useState } from "react";
+import { Post } from "../App";
 
-  export const Home = () =>{
+interface HomeProps {
+    posts: Post[];
+}
+
+
+export const Home = (props: HomeProps) =>{
+    const {posts} = props;
     return (
         <div>
             <h1>日記一覧</h1>
